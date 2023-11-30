@@ -22,7 +22,7 @@ def encrypt(key, filename, out_file_name):
                 while True:
                     chunk = f_input.read(chunks)
                     if len(chunk) == 0:
-                        messagebox.showinfo("100%", "ITS ENCRYPTED")
+                        messagebox.showinfo("100%", "it`s encrypted")
                         break
                     if len(chunk) % 16 != 0:
                         chunk += b' ' * (16 - (len(chunk) % 16))
@@ -42,7 +42,7 @@ def decrypt(key, filename, out_file_name):
                 while True:
                     chunk = f_input.read(chunks)
                     if len(chunk) == 0:
-                        messagebox.showinfo("100%", "ITS DENCRYPTED")
+                        messagebox.showinfo("100%", "it`s decrypted")
                         break
                     f_output.write(decryptor.decrypt(chunk))
                     f_output.truncate(filesize)
@@ -72,25 +72,25 @@ def grafick():
         file = tkinter.filedialog.asksaveasfilename()
         entry2.insert(10,file)
     app = Tk()
-    app.title("BON ENCRYPT")
+    app.title("BonEncryptor")
     app.config(width=350 ,height=250)
-    Anzeige = Label(app, text = "Willkommen bei BON ENCRYPT")
+    Anzeige = Label(app, text = "BonEncryptor Encryption Software")
     Anzeige.place(x = 80, y = 20 )
-    Button1 = Button(app, text="Dursuchen" ,command=openone)
+    Button1 = Button(app, text="Search" ,command=openone)
     Button1.place(x = 20, y= 60)
     entry1 = Entry(app, width = 25)
     entry1.place(x = 125, y= 65)
-    Button2 = Button(app, text="Speichern", command=opentwo)
+    Button2 = Button(app, text="Save", command=opentwo)
     Button2.place(x = 20 , y = 110)
     entry2 = Entry(app, width = 25)
     entry2.place(x =125, y = 115)
-    Anzeige2 = Label(app, text = "Passwort")
+    Anzeige2 = Label(app, text = "Password")
     Anzeige2.place(x = 130, y = 150)
     entry3 = Entry(app, width = 40)
     entry3.place(x = 10 ,y = 170)
-    Button3 = Button(app, text="ENCRYPT", command=startenc)
+    Button3 = Button(app, text="encrypt", command=startenc)
     Button3.place(x = 50 , y = 200)
-    Button4 = Button(app, text="DECRYPT", command=startdec)
+    Button4 = Button(app, text="decrypt", command=startdec)
     Button4.place(x = 180 , y = 200)
     app.mainloop()
 grafick()
